@@ -31,7 +31,8 @@
     "format:check": "prettier --check .",
     "prepare": "husky",
     "lint": "npx eslint --max-warnings 0 \"./src/**/*.js\" \"./scripts/**/*.js\" \"./tests/**/*.js\" \"./api/**/*.js\" \"./themes/**/*.js\"",
-    "bench": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.bench.config.js"
+    "bench": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config jest.bench.config.js",
+    "start": "node express.js"
   },
   "author": "Anurag Hazra",
   "license": "MIT",
@@ -60,6 +61,7 @@
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "emoji-name-map": "^1.2.8",
+    "express": "^4.19.2",
     "github-username-regex": "^1.0.0",
     "upgrade": "^1.1.0",
     "word-wrap": "^1.2.5"
