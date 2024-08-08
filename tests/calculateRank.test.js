@@ -19,7 +19,6 @@ describe("Test calculateRank", () => {
   });
 
   it("beginner user gets B rank", () => {
-    // Updated expected values
     expect(
       calculateRank({
         all_commits: false,
@@ -35,7 +34,6 @@ describe("Test calculateRank", () => {
   });
 
   it("median user gets A- rank", () => {
-    // Updated expected values
     expect(
       calculateRank({
         all_commits: false,
@@ -51,7 +49,6 @@ describe("Test calculateRank", () => {
   });
 
   it("average user gets A- rank (include_all_commits)", () => {
-    // Updated expected values
     expect(
       calculateRank({
         all_commits: true,
@@ -67,7 +64,6 @@ describe("Test calculateRank", () => {
   });
 
   it("advanced user gets A rank", () => {
-    // Updated expected values
     expect(
       calculateRank({
         all_commits: false,
@@ -83,7 +79,6 @@ describe("Test calculateRank", () => {
   });
 
   it("expert user gets S rank", () => {
-    // Updated expected values
     expect(
       calculateRank({
         all_commits: false,
@@ -99,7 +94,6 @@ describe("Test calculateRank", () => {
   });
 
   it("sindresorhus gets S rank", () => {
-    // Updated expected values
     expect(
       calculateRank({
         all_commits: false,
