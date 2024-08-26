@@ -63,7 +63,7 @@ describe("Test calculateRank", () => {
     ).toStrictEqual({ level: "A-", percentile: 32.40430774715597 });
   });
 
-  it("advanced user gets A rank", () => {
+  it("advanced user gets A+ rank", () => {
     expect(
       calculateRank({
         all_commits: false,
@@ -75,10 +75,10 @@ describe("Test calculateRank", () => {
         stars: 200,
         followers: 40,
       }),
-    ).toStrictEqual({ level: "A", percentile: 14.788917824074066 });
+    ).toStrictEqual({ level: "A+", percentile: 14.788917824074066 });
   });
 
-  it("expert user gets S rank", () => {
+  it("expert user gets S+ rank", () => {
     expect(
       calculateRank({
         all_commits: false,
@@ -90,10 +90,10 @@ describe("Test calculateRank", () => {
         stars: 800,
         followers: 160,
       }),
-    ).toStrictEqual({ level: "S", percentile: 3.543402172594079 });
+    ).toStrictEqual({ level: "S+", percentile: 3.543402172594079 });
   });
 
-  it("sindresorhus gets S rank", () => {
+  it("sindresorhus gets S+ rank", () => {
     expect(
       calculateRank({
         all_commits: false,
@@ -105,6 +105,6 @@ describe("Test calculateRank", () => {
         stars: 600000,
         followers: 50000,
       }),
-    ).toStrictEqual({ level: "S", percentile: 0.005679868176111658 });
+    ).toStrictEqual({ level: "S+", percentile: 0.005679868176111658 });
   });
 });
