@@ -30,7 +30,7 @@ describe("Test calculateRank", () => {
         stars: 25,
         followers: 5,
       }),
-    ).toStrictEqual({ level: "B", percentile: 55.7760462343287 });
+    ).toStrictEqual({ level: "B+", percentile: 49.76915594013674 });
   });
 
   it("median user gets A- rank", () => {
@@ -45,7 +45,7 @@ describe("Test calculateRank", () => {
         stars: 50,
         followers: 10,
       }),
-    ).toStrictEqual({ level: "A-", percentile: 35.51488401035059 });
+    ).toStrictEqual({ level: "A-", percentile: 29.945343369401854 });
   });
 
   it("average user gets A- rank (include_all_commits)", () => {
@@ -60,7 +60,7 @@ describe("Test calculateRank", () => {
         stars: 50,
         followers: 10,
       }),
-    ).toStrictEqual({ level: "A-", percentile: 33.34308838298911 });
+    ).toStrictEqual({ level: "A-", percentile: 28.4858292181855 });
   });
 
   it("advanced user gets A+ rank", () => {
@@ -75,7 +75,7 @@ describe("Test calculateRank", () => {
         stars: 200,
         followers: 40,
       }),
-    ).toStrictEqual({ level: "A", percentile: 16.250023529018065 });
+    ).toStrictEqual({ level: "A+", percentile: 12.628436408577882 });
   });
 
   it("expert user gets S+ rank", () => {
@@ -90,7 +90,7 @@ describe("Test calculateRank", () => {
         stars: 800,
         followers: 160,
       }),
-    ).toStrictEqual({ level: "SS+", percentile: 4.871803577206801 });
+    ).toStrictEqual({ level: "S+", percentile: 8.2877204731496468 });
   });
 
   it("sindresorhus gets SS+ rank", () => {
@@ -105,6 +105,6 @@ describe("Test calculateRank", () => {
         stars: 600000,
         followers: 50000,
       }),
-    ).toStrictEqual({ level: "SS+", percentile: 0.005517646607966498 });
+    ).toStrictEqual({ level: "SS+", percentile: 4.0020390517114332596 });
   });
 });
