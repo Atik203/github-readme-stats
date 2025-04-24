@@ -66,7 +66,7 @@ function calculateRank({
     FOLLOWERS_WEIGHT;
 
   const THRESHOLDS = [5, 10, 15, 25, 37.5, 50, 62.5, 75, 87.5, 100];
-  const LEVELS = ["S+", "S", "A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
+  const LEVELS = ["SS+", "S+", "A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
 
   const rank =
     1 -
@@ -79,6 +79,8 @@ function calculateRank({
       TOTAL_WEIGHT;
 
   const level = LEVELS[THRESHOLDS.findIndex((t) => rank * 100 <= t)];
+
+  console.log(`Rank: ${rank}, Level: ${level}, Percentile: ${rank * 100}`);
 
   return { level, percentile: rank * 100 };
 }
