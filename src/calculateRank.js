@@ -44,17 +44,17 @@ function calculateRank({
   stars,
   followers,
 }) {
-  const COMMITS_MEDIAN = all_commits ? 300 : 100,
+  const COMMITS_MEDIAN = all_commits ? 250 : 80,
     COMMITS_WEIGHT = 7;
-  const PRS_MEDIAN = 50,
+  const PRS_MEDIAN = 40,
     PRS_WEIGHT = 5;
-  const ISSUES_MEDIAN = 35,
+  const ISSUES_MEDIAN = 30,
     ISSUES_WEIGHT = 5;
-  const REVIEWS_MEDIAN = 2,
+  const REVIEWS_MEDIAN = 1.5,
     REVIEWS_WEIGHT = 3;
-  const STARS_MEDIAN = 25,
+  const STARS_MEDIAN = 20,
     STARS_WEIGHT = 3;
-  const FOLLOWERS_MEDIAN = 10,
+  const FOLLOWERS_MEDIAN = 8,
     FOLLOWERS_WEIGHT = 2;
 
   const TOTAL_WEIGHT =
