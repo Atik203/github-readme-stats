@@ -90,10 +90,10 @@ describe("Test calculateRank", () => {
         stars: 800,
         followers: 160,
       }),
-    ).toStrictEqual({ level: "S+", percentile: 3.543402172594079 });
+    ).toStrictEqual({ level: "SS+", percentile: 3.543402172594079 });
   });
 
-  it("sindresorhus gets S+ rank", () => {
+  it("sindresorhus gets SS+ rank", () => {
     expect(
       calculateRank({
         all_commits: false,
@@ -105,6 +105,6 @@ describe("Test calculateRank", () => {
         stars: 600000,
         followers: 50000,
       }),
-    ).toStrictEqual({ level: "S+", percentile: 0.005679868176111658 });
+    ).toStrictEqual({ level: "SS+", percentile: 0.005679868176111658 });
   });
 });
