@@ -1,11 +1,10 @@
-import { jest } from "@jest/globals";
+import { afterEach, describe, expect, it, jest } from "@jest/globals";
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
 import api from "../api/index.js";
 import { calculateRank } from "../src/calculateRank.js";
 import { renderStatsCard } from "../src/cards/stats-card.js";
 import { CONSTANTS, renderError } from "../src/common/utils.js";
-import { expect, it, describe, afterEach } from "@jest/globals";
 
 const stats = {
   name: "Anurag Hazra",
@@ -79,7 +78,7 @@ const mock = new MockAdapter(axios);
 const faker = (query, data) => {
   const req = {
     query: {
-      username: "anuraghazra",
+      username: "atik203",
       ...query,
     },
   };
@@ -138,7 +137,7 @@ describe("Test /api/", () => {
   it("should get the query options", async () => {
     const { req, res } = faker(
       {
-        username: "anuraghazra",
+        username: "atik203",
         hide: "issues,prs,contribs",
         show_icons: true,
         hide_border: true,
@@ -268,7 +267,7 @@ describe("Test /api/", () => {
   it("should allow changing ring_color", async () => {
     const { req, res } = faker(
       {
-        username: "anuraghazra",
+        username: "atik203",
         hide: "issues,prs,contribs",
         show_icons: true,
         hide_border: true,
