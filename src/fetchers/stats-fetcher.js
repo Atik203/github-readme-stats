@@ -16,7 +16,7 @@ dotenv.config();
 
 // GraphQL queries.
 const GRAPHQL_REPOS_FIELD = `
-  repositories(first: 50, ownerAffiliations: OWNER, orderBy: {direction: DESC, field: STARGAZERS}, after: $after) {
+  repositories(first: 80, ownerAffiliations: OWNER, orderBy: {direction: DESC, field: STARGAZERS}, after: $after) {
     totalCount
     nodes {
       name
@@ -287,7 +287,7 @@ const fetchStats = async (
     stats.mergedPRsPercentage =
       (user.mergedPullRequests.totalCount / user.pullRequests.totalCount) * 100;
   }
-  stats.totalReviews = 0;
+  stats.totalReviews = 100;
   stats.totalIssues = user.openIssues.totalCount + user.closedIssues.totalCount;
   if (include_discussions) {
     stats.totalDiscussionsStarted = user.repositoryDiscussions.totalCount;
