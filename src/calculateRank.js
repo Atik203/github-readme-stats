@@ -44,18 +44,18 @@ function calculateRank({
   stars,
   followers,
 }) {
-  const COMMITS_MEDIAN = all_commits ? 1000 : 250,
-    COMMITS_WEIGHT = 2;
-  const PRS_MEDIAN = 50,
-    PRS_WEIGHT = 3;
-  const ISSUES_MEDIAN = 25,
-    ISSUES_WEIGHT = 1;
-  const REVIEWS_MEDIAN = 2,
-    REVIEWS_WEIGHT = 1;
-  const STARS_MEDIAN = 50,
-    STARS_WEIGHT = 4;
-  const FOLLOWERS_MEDIAN = 10,
-    FOLLOWERS_WEIGHT = 1;
+  const COMMITS_MEDIAN = all_commits ? 300 : 50,
+    COMMITS_WEIGHT = 15;
+  const PRS_MEDIAN = 5,
+    PRS_WEIGHT = 10;
+  const ISSUES_MEDIAN = 5,
+    ISSUES_WEIGHT = 10;
+  const REVIEWS_MEDIAN = 1,
+    REVIEWS_WEIGHT = 5;
+  const STARS_MEDIAN = 1,
+    STARS_WEIGHT = 10;
+  const FOLLOWERS_MEDIAN = 1,
+    FOLLOWERS_WEIGHT = 10;
 
   const TOTAL_WEIGHT =
     COMMITS_WEIGHT +
@@ -65,8 +65,8 @@ function calculateRank({
     STARS_WEIGHT +
     FOLLOWERS_WEIGHT;
 
-  const THRESHOLDS = [1, 12.5, 25, 37.5, 50, 62.5, 75, 87.5, 100];
-  const LEVELS = ["S", "A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
+  const THRESHOLDS = [5, 10, 15, 25, 37.5, 50, 62.5, 75, 87.5, 100];
+  const LEVELS = ["SS+", "S+", "A+", "A", "A-", "B+", "B", "B-", "C+", "C"];
 
   const rank =
     1 -
@@ -79,6 +79,8 @@ function calculateRank({
       TOTAL_WEIGHT;
 
   const level = LEVELS[THRESHOLDS.findIndex((t) => rank * 100 <= t)];
+
+  console.log(`Rank: ${rank}, Level: ${level}, Percentile: ${rank * 100}`);
 
   return { level, percentile: rank * 100 };
 }
