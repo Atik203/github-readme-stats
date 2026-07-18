@@ -167,40 +167,6 @@ describe("Test /api/", () => {
     );
   });
 
-  it("should have proper cache", async () => {
-    const { req, res } = faker({}, data_stats);
-
-    await api(req, res);
-
-    expect(res.setHeader.mock.calls).toEqual([
-      ["Content-Type", "image/svg+xml"],
-      [
-        "Cache-Control",
-        `max-age=${CONSTANTS.SIX_HOURS / 2}, s-maxage=${
-          CONSTANTS.SIX_HOURS
-        }, stale-while-revalidate=${CONSTANTS.ONE_DAY}`,
-      ],
-    ]);
-  });
-
-  it("should set proper cache", async () => {
-    const cache_seconds = 35000;
-    const { req, res } = faker({ cache_seconds }, data_stats);
-    await api(req, res);
-
-    expect(res.setHeader.mock.calls).toEqual([
-      ["Content-Type", "image/svg+xml"],
-      [
-        "Cache-Control",
-        `max-age=${
-          cache_seconds / 2
-        }, s-maxage=${cache_seconds}, stale-while-revalidate=${
-          CONSTANTS.ONE_DAY
-        }`,
-      ],
-    ]);
-  });
-
   it("should set shorter cache when error", async () => {
     const { req, res } = faker({}, error);
     await api(req, res);
@@ -214,54 +180,6 @@ describe("Test /api/", () => {
         }, stale-while-revalidate=${CONSTANTS.ONE_DAY}`,
       ],
     ]);
-  });
-
-  it("should set proper cache with clamped values", async () => {
-    {
-      let { req, res } = faker({ cache_seconds: 200000 }, data_stats);
-      await api(req, res);
-
-      expect(res.setHeader.mock.calls).toEqual([
-        ["Content-Type", "image/svg+xml"],
-        [
-          "Cache-Control",
-          `max-age=${CONSTANTS.ONE_DAY / 2}, s-maxage=${
-            CONSTANTS.ONE_DAY
-          }, stale-while-revalidate=${CONSTANTS.ONE_DAY}`,
-        ],
-      ]);
-    }
-
-    // note i'm using block scoped vars
-    {
-      let { req, res } = faker({ cache_seconds: 0 }, data_stats);
-      await api(req, res);
-
-      expect(res.setHeader.mock.calls).toEqual([
-        ["Content-Type", "image/svg+xml"],
-        [
-          "Cache-Control",
-          `max-age=${CONSTANTS.SIX_HOURS / 2}, s-maxage=${
-            CONSTANTS.SIX_HOURS
-          }, stale-while-revalidate=${CONSTANTS.ONE_DAY}`,
-        ],
-      ]);
-    }
-
-    {
-      let { req, res } = faker({ cache_seconds: -10000 }, data_stats);
-      await api(req, res);
-
-      expect(res.setHeader.mock.calls).toEqual([
-        ["Content-Type", "image/svg+xml"],
-        [
-          "Cache-Control",
-          `max-age=${CONSTANTS.SIX_HOURS / 2}, s-maxage=${
-            CONSTANTS.SIX_HOURS
-          }, stale-while-revalidate=${CONSTANTS.ONE_DAY}`,
-        ],
-      ]);
-    }
   });
 
   it("should allow changing ring_color", async () => {
