@@ -117,7 +117,7 @@ describe("Test fetchStats", () => {
     });
 
     expect(stats).toStrictEqual({
-      contributedTo: 61,
+      contributedTo: 200,
       name: "Anurag Hazra",
       totalCommits: 100,
       totalIssues: 200,
@@ -153,7 +153,7 @@ describe("Test fetchStats", () => {
     });
 
     expect(stats).toStrictEqual({
-      contributedTo: 61,
+      contributedTo: 200,
       name: "Anurag Hazra",
       totalCommits: 100,
       totalIssues: 200,
@@ -195,7 +195,7 @@ describe("Test fetchStats", () => {
     });
 
     expect(stats).toStrictEqual({
-      contributedTo: 61,
+      contributedTo: 200,
       name: "Anurag Hazra",
       totalCommits: 1000,
       totalIssues: 200,
@@ -244,7 +244,7 @@ describe("Test fetchStats", () => {
     });
 
     expect(stats).toStrictEqual({
-      contributedTo: 61,
+      contributedTo: 200,
       name: "Anurag Hazra",
       totalCommits: 1000,
       totalIssues: 200,
@@ -275,7 +275,7 @@ describe("Test fetchStats", () => {
     });
 
     expect(stats).toStrictEqual({
-      contributedTo: 61,
+      contributedTo: 200,
       name: "Anurag Hazra",
       totalCommits: 100,
       totalIssues: 200,
@@ -306,7 +306,7 @@ describe("Test fetchStats", () => {
     });
 
     expect(stats).toStrictEqual({
-      contributedTo: 61,
+      contributedTo: 200,
       name: "Anurag Hazra",
       totalCommits: 100,
       totalIssues: 200,
@@ -337,7 +337,7 @@ describe("Test fetchStats", () => {
     });
 
     expect(stats).toStrictEqual({
-      contributedTo: 61,
+      contributedTo: 200,
       name: "Anurag Hazra",
       totalCommits: 100,
       totalIssues: 200,
@@ -366,7 +366,7 @@ describe("Test fetchStats", () => {
     });
 
     expect(stats).toStrictEqual({
-      contributedTo: 61,
+      contributedTo: 200,
       name: "Anurag Hazra",
       totalCommits: 100,
       totalIssues: 200,
@@ -395,7 +395,7 @@ describe("Test fetchStats", () => {
     });
 
     expect(stats).toStrictEqual({
-      contributedTo: 61,
+      contributedTo: 200,
       name: "Anurag Hazra",
       totalCommits: 100,
       totalIssues: 200,

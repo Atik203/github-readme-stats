@@ -14,10 +14,10 @@ const stats = {
   totalPRs: 400,
   totalPRsMerged: 320,
   mergedPRsPercentage: 80,
-  totalReviews: 50,
+  totalReviews: 1000,
   totalDiscussionsStarted: 10,
   totalDiscussionsAnswered: 40,
-  contributedTo: 50,
+  contributedTo: 200,
   rank: null,
 };
 
