@@ -16,5 +16,5 @@ export default {
   coveragePathIgnorePatterns: [
     "<rootDir>/node_modules/",
     "<rootDir>/tests/E2E/",
-  ],
+  ]
 };
